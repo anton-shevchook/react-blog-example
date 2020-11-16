@@ -16,6 +16,7 @@ import AdminEditPostPage from './AdminEditPostPage';
 // Need to write proper CSS for sidebar and content columns.
 const AdminPage = ({ posts, removePost, editPost, createPost }) => {
 	let { path, url } = useRouteMatch();
+	const herokuTest = 'itsHerokuTest';
 	return ( 
 		<main class="admin-page container">
 			<div className="admin-sidebar border">
