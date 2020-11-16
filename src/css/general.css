@@ -1,0 +1,340 @@
+/*
+	This file contains general.css
+*/
+
+.border {
+	border: 1px solid #eee;
+}
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	display: flex;
+	padding: 30px 50px;
+	border: 1px solid #eee;
+	justify-content: space-between;
+}
+
+header nav ul {
+	list-style-type: none;
+	margin: 0px;
+}
+
+header nav ul li {
+	display: inline-block;
+	margin: 0px 20px;
+}
+
+header a {
+	text-decoration: none;
+}
+
+header a.logo-link {
+	font-size: 30px;
+}
+
+/* Main Page */
+.container-ver {
+	display: flex;
+	flex-direction: column;
+	/*height: 100%;*/
+	/*min-height: 100%;*/
+}
+
+.container {
+	display: flex;
+	margin: 0 200px;
+}
+
+.content-col {
+	flex-basis: 80%;
+}
+.content-col p {
+	font-size: 20px;
+}
+.image-col {
+	/*display: flex;*/
+	/*flex-basis: 20%;*/
+	/*justify-content: center;
+	text-align: center;*/
+}
+.btn-container {
+	padding-left: 40px;
+	padding-top: 20px;
+}
+
+.call-to-action-btn {
+	height: 80px;
+	width: 300px;
+}
+
+
+/* Footer styles */
+footer {
+	display: flex;
+	padding: 30px 50px;
+}
+footer nav {
+	width: 100%;
+}
+footer nav ul {
+	display: flex;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	justify-content: space-around;
+}
+
+footer nav ul li {
+	display: inline-block;
+	margin: 0px 20px;
+}
+
+footer a {
+	text-decoration: none;
+}
+
+footer a.logo-link {
+	font-size: 30px;
+}
+
+/*
+	About Page Css
+
+	We will have section, also two columns, image and text column.
+*/
+.about-page.container {
+	flex-wrap: wrap;
+}
+.about-page section {
+	display: flex;
+	justify-content: center;
+	overflow: auto;
+}
+.about-page section .info-col {
+	flex-basis: 60%;
+}
+
+.about-page section .info-col {
+	padding: 30px;
+}
+.spacer {
+	clear: both;
+}
+
+/*
+	Contact Page Css
+*/
+
+.contact-page .content {
+	/*flex-basis: 40%;*/
+}
+.contact-page form {
+	/*display: block;*/
+	padding-top: 20px;
+	width: 30%;
+}
+
+.form-field {
+	padding: 0px 20px;
+	margin-bottom: 15px;
+}
+
+.form-field label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.form-field input[type="text"], .form-field input[type="email"] {
+	width: 98%;
+	height: 40px;
+}
+
+.form-field textarea {
+	width: 98%;
+}
+
+.form-field input[type="submit"] {
+	height: 40px;
+	width: 150px;
+}
+
+/*
+	Admin Page CSS
+*/
+.admin-page {
+	display: flex;
+}
+.admin-page .admin-sidebar {
+	flex-basis: 20%;
+}
+.admin-page .admin-content {
+	flex-basis: 80%;
+}
+.admin-page .admin-sidebar ul {
+	list-style-type: none;
+	padding-left: 0px;
+}
+.admin-page .admin-sidebar ul li {
+	border: 1px solid #eee;
+	padding: 5px 0px;
+	text-align: center;
+}
+.admin-page .admin-sidebar ul a {
+	color: #222;
+	text-decoration: none;
+}
+
+/*
+	Admin Create Post Page
+*/
+
+.admin-page .create-post-page {
+	flex-basis: 80%;
+}
+
+
+
+/*
+	Admin Posts Page CSS
+*/
+.admin-posts-page {
+	display: flex;
+}
+.admin-posts-page .admin-sidebar {
+	flex-basis: 20%;
+}
+.admin-posts-page .admin-content {
+	flex-basis: 80%;
+}
+.admin-posts-page .admin-sidebar ul {
+	list-style-type: none;
+	padding-left: 0px;
+}
+.admin-posts-page .admin-sidebar ul li {
+	border: 1px solid #eee;
+	padding: 5px 0px;
+	text-align: center;
+}
+.admin-posts-page .admin-sidebar ul a {
+	color: #222;
+	text-decoration: none;
+}
+
+.admin-posts-page .admin-content {
+
+}
+.admin-posts-page .admin-content table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #eee;
+}
+.admin-posts-page .admin-content table  tr {
+	border: 1px solid #eee;
+}
+.admin-posts-page .admin-content table th, .admin-posts-page .admin-content table td {
+	border: 1px solid #eee;
+}
+
+/*
+	Post Archive Page Css
+*/
+
+.post-archive-page {
+	flex-wrap: wrap;
+}
+
+.post-archive-page .post-container {
+	flex-basis: 100%;
+	/*width: 100%;*/
+}
+
+.post-archive-page .post-container ul.post-list {
+	list-style-type: none;
+}
+
+.post-archive-page .post-container .post-list li {
+	display: flex;
+}
+
+.post-archive-page .post-container .post-list li .post-feature-image {}
+
+.post-archive-page .post-container .post-list li .post-text {
+	padding: 10px;
+}
+
+.post-archive-page .pagination-container {
+	padding: 10px;
+	flex-basis: 100%;
+	text-align: center;
+	
+}
+
+.post-archive-page .pagination-container .pagination-arrow {
+	display: inline-block;
+	width: 100px;
+	margin-right: 15px;
+	padding: 10px;
+	border: 1px solid #eee;
+}
+
+/*
+	Single Post Page
+*/
+.single-post-page {
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.single-post-page .post-image {
+	flex-basis: 100%;
+	text-align: center;
+}
+
+.single-post-page .post-content {
+	/*text-align: center;*/
+	justify-content: center;
+	flex-basis: 50%;
+
+}
+
+.post-archive-page .post-container {
+	flex-basis: 100%;
+	/*width: 100%;*/
+}
+
+.post-archive-page .post-container ul.post-list {
+	list-style-type: none;
+}
+
+.post-archive-page .post-container .post-list li {
+	display: flex;
+}
+
+.post-archive-page .post-container .post-list li .post-feature-image {}
+
+.post-archive-page .post-container .post-list li .post-text {
+	padding: 10px;
+}
+
+.post-archive-page .pagination-container {
+	padding: 10px;
+	flex-basis: 100%;
+	text-align: center;
+	
+}
+
+.post-archive-page .pagination-container .pagination-arrow {
+	display: inline-block;
+	width: 100px;
+	margin-right: 15px;
+	padding: 10px;
+	border: 1px solid #eee;
+}
+
