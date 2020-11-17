@@ -53,16 +53,23 @@ header a.logo-link {
 }
 
 .content-col {
-	flex-basis: 80%;
+	flex-basis: 60%;
 }
 .content-col p {
 	font-size: 20px;
+}
+.content-col h1 {
+	color: #66757F;
 }
 .image-col {
 	/*display: flex;*/
 	/*flex-basis: 20%;*/
 	/*justify-content: center;
 	text-align: center;*/
+	padding-top: 70px;
+}
+.image-col img {
+	/*width: auto;*/
 }
 .btn-container {
 	padding-left: 40px;
