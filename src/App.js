@@ -110,12 +110,6 @@ function App() {
 
 
     <div class="container-ver">
-    
-
-
-      This is a start of React Blog
-      {JSON.stringify(auth)}
-
       {console.log('posts', posts)}
       <Router>
         <Header />
