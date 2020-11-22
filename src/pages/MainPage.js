@@ -13,9 +13,9 @@ const MainPage = () => {
 				<h1>React Blog</h1>
 				<p class="test">
 					Hello folks! Welcome to this small and simple React Blog Project.
-					<br />
+					
 					It serves as example of showing main features of React, Javascript project.
-					<br />
+					
 					Here you would be able to find Pages as components, react router, authentication,
 					fetching data from api, crud operations, and other things.
 					
