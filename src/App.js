@@ -124,7 +124,7 @@ function App() {
             </PrivateRoute>
 
             <Route path="/post-archive">
-              <ArchivePage />
+              <ArchivePage posts={posts} />
             </Route>
             <Route path="/admin-posts-page">
               <AdminPostsPage posts={posts} removePost={removePost} />

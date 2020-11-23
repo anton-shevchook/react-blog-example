@@ -288,11 +288,14 @@ footer a.logo-link {
 
 .post-archive-page .post-container {
 	flex-basis: 100%;
+	display: flex;
+	justify-content: center;
 	/*width: 100%;*/
 }
 
 .post-archive-page .post-container ul.post-list {
 	list-style-type: none;
+	width: 50%;
 }
 
 .post-archive-page .post-container .post-list li {
@@ -340,10 +343,7 @@ footer a.logo-link {
 
 }
 
-.post-archive-page .post-container {
-	flex-basis: 100%;
-	/*width: 100%;*/
-}
+
 
 .post-archive-page .post-container ul.post-list {
 	list-style-type: none;

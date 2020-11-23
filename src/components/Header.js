@@ -26,7 +26,7 @@ const Header = (props) => {
 	// alert(location.pathname);
 	const noHeaderPages = ['/admin', '/admin/posts', '/admin/create-post', '/login'];
 
-	return !adminPages.includes(location.pathname) && !noTemplatePages.includes(location.pathname) ?
+	return !adminPages.includes(location.pathname) ?
 	// (location.pathname !== '/admin' && location.pathname !== '/login' ) ? 
 		(
 			<header>
@@ -62,7 +62,7 @@ const Header = (props) => {
 			</header>
 		) : adminPages.includes(location.pathname) ? (
 			<header>
-				<div className=""><a href="/" className="">Back to site</a></div>
+				<div className=""><Link to="/">Back to site</Link></div>
 			</header>
 		) : '';
 }

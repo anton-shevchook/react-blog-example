@@ -4,7 +4,7 @@
 
 import React from 'react';
 
-const ArchivePage = () => {
+const ArchivePage = ({posts}) => {
 
 	/*
 .post-archive-page {}
@@ -24,43 +24,27 @@ const ArchivePage = () => {
 .post-archive-page .pagination-container .pagination-arrow {}
 	*/
 
+	const postItems = posts.map((post, index) => {
+		return (
+			<li key={index} class="post-list-item border">
+				<div class="post-feature-image">
+					<img class="" src="https://via.placeholder.com/150"/>	
+				</div>
+				<div class="post-text">
+					<h3>{post.title}</h3>
+					<p class="border">
+						{post.body}
+					</p>
+				</div>
+			</li>
+		);
+	});
+
 	return ( 
 		<main class="post-archive-page container border">
 			<div class="post-container border">
 				<ul class="post-list border">
-					<li class="post-list-item border">
-						<div class="post-feature-image">
-							<img class="" src="https://via.placeholder.com/150"/>	
-						</div>
-						<div class="post-text border">
-							<h3>Post Title</h3>
-							<p class="border">
-								It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-							</p>
-						</div>
-					</li>
-					<li class="post-list-item border">
-						<div class="post-feature-image">
-							<img class="" src="https://via.placeholder.com/150"/>	
-						</div>
-						<div class="post-text border">
-							<h3>Post Title</h3>
-							<p class="border">
-								It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-							</p>
-						</div>
-					</li>
-					<li class="post-list-item border">
-						<div class="post-feature-image">
-							<img class="" src="https://via.placeholder.com/150"/>	
-						</div>
-						<div class="post-text border">
-							<h3>Post Title</h3>
-							<p class="border">
-								It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-							</p>
-						</div>
-					</li>
+					{postItems}
 				</ul>
 			</div>
 			<div class="pagination-container">

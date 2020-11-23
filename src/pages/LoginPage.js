@@ -1,7 +1,7 @@
 /*
 	This file defines Login Page Components.
 */
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	useHistory,
 	useLocation
@@ -13,28 +13,49 @@ const LoginPage = () => {
 	let location = useLocation();
 
 	let { from } = location.state || { from: { pathname: '/' } };
-	
-	let login = () => {
-		auth.login(() => { 
-			history.replace(from);
+
+	const [credentials, setCredentials] = useState({login: '', password: ''});
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		logIn(credentials);
+	}
+
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+
+		setCredentials({
+			...credentials,
+			[name]: value
 		});
 	}
+	
+	let logIn = (credentials) => {
+		auth.login(() => { 
+			alert(JSON.stringify(location.state));
+			history.replace(from);
+		}, credentials);
+	}
+
+	const { login, password } = credentials;
+
 	return ( 
 		<div class="login-page border">
 			<h3>Please login into Blog</h3>
-			<form onSubmit={(e)=>{e.preventDefault();}}>
+			<form onSubmit={handleSubmit}>
 				<div class="form-field">
 					<label htmlFor="">Login</label>
-					<input type="text" name="title" placeholder="Enter login" value="" />
+					<input type="text" name="login" placeholder="Enter login" value={login} onChange={handleChange} />
 				</div>
 				<div class="form-field">
 					<label htmlFor="">Password</label>
-					<input type="text" name="title" placeholder="Enter password" value="" />
+					<input type="text" name="password" placeholder="Enter password" value={password} onChange={handleChange} />
 				</div>
 				<div class="form-field sbmt-btn-container">
-					<button class="login-btn" onClick={login}>Login</button>		
+					<button class="login-btn" type="submit">Login</button>		
 				</div>
 			</form>
+			{JSON.stringify(credentials, null, 2)}
 			
 		</div>
 	);
