@@ -12,7 +12,7 @@ import {
   useLocation
 } from 'react-router-dom';
 
-import { standalonePages } from '../utilities/utilities';
+import { adminPages, noTemplatePages } from '../utilities/utilities';
 
 const Header = (props) => {
 	let { path, url } = useRouteMatch();
@@ -26,7 +26,7 @@ const Header = (props) => {
 	// alert(location.pathname);
 	const noHeaderPages = ['/admin', '/admin/posts', '/admin/create-post', '/login'];
 
-	return !standalonePages.includes(location.pathname) ?
+	return !adminPages.includes(location.pathname) && !noTemplatePages.includes(location.pathname) ?
 	// (location.pathname !== '/admin' && location.pathname !== '/login' ) ? 
 		(
 			<header>
@@ -59,6 +59,10 @@ const Header = (props) => {
 		              </li>
 		            </ul>
 	          	</nav>
+			</header>
+		) : adminPages.includes(location.pathname) ? (
+			<header>
+				<div className=""><a href="/" className="">Back to site</a></div>
 			</header>
 		) : '';
 }

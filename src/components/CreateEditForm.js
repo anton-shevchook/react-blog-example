@@ -39,7 +39,7 @@ const CreateEditForm = (props) => {
 
 	// const { post } = props || { post: { title: '', content: '' } };
 
-	const { post = { title: 'stoppin', content: 'poppin' }, editPost, createPost } = props;
+	const { post = { title: '', content: '' }, editPost, createPost } = props;
 
 	console.log('createPost: ', createPost);
 
@@ -114,7 +114,7 @@ const CreateEditForm = (props) => {
 		console.log('Sending post:', {post});
 
 		if(id) {
-			alert('editPost');
+			alert('Editting post');
 			const post = {
 				id,
 				title,
@@ -122,7 +122,7 @@ const CreateEditForm = (props) => {
 			};
 			editPost(id, post);	
 		} else {
-			alert('createPost');
+			alert('Creating Post');
 			const post = {
 				title,
 				body: content
@@ -140,8 +140,6 @@ const CreateEditForm = (props) => {
 
 	return (
 		<form action="" onSubmit={handleSubmit}>
-			<div>{JSON.stringify(props.post)}</div>
-			<div>{JSON.stringify(values)}</div>
 			<div class="form-field">
 				<label htmlFor="">Post Title</label>
 				<input type="text" name="title" placeholder="Enter title" onChange={handleChange} value={values.title} />
@@ -150,9 +148,6 @@ const CreateEditForm = (props) => {
 				<label htmlFor="">Post Content</label>
 				<textarea name="content" id="" cols="30" rows="20" placeholder="Post Content" onChange={handleChange} value={content}>
 				</textarea>
-			</div>
-			<div class="form-field">
-				<input type="submit" value="Submit" />
 			</div>
 			<div class="form-field">
 				<input type="submit" value="Submit" />

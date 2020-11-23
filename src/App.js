@@ -116,7 +116,6 @@ function App() {
         <div class="container-ver">
           <Switch>
             <Route path="/login">
-            {JSON.stringify(auth)}
               <LoginPage />
             </Route>
 

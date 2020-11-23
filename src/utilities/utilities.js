@@ -4,11 +4,14 @@
 
 import { useState } from 'react';
 
-const standalonePages = [
+const adminPages = [
 	'/admin',
 	'/admin/posts',
 	'/admin/create-post',
-	'/admin/edit-post',
+	'/admin/edit-post'
+];
+
+const noTemplatePages = [
 	'/login'
 ];
 
@@ -23,4 +26,4 @@ const useInput = (initialValue) => {
 
 
 
-export { standalonePages, useInput };
+export { adminPages, noTemplatePages, useInput };

@@ -14,29 +14,6 @@ const AdminCreatePostPage = (props) => {
 			<div>
 				<CreateEditForm createPost={createPost} />
 			</div>
-			<div class="form-container border">
-				<form action="">
-					<div class="form-field">
-						<label htmlFor="feature-image">Feature Image</label>
-						<input type="file" id="feature-image" name="feature-image" />
-					</div>
-					<div class="form-field">
-						<label htmlFor="">Post Title</label>
-						<input type="text" placeholder="Enter title" />
-					</div>
-					<div class="form-field">
-						<label htmlFor="">Post Content</label>
-						<textarea name="" id="" cols="30" rows="20" placeholder="Post Content">
-						</textarea>
-					</div>
-					<div class="form-field">
-						<input type="submit" value="Submit" />
-					</div>
-					<div class="form-field">
-						<button>Cancel</button>
-					</div>
-				</form>
-			</div>
 		</div>
 	);
 }

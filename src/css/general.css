@@ -187,13 +187,38 @@ footer a.logo-link {
 .admin-page .admin-content {
 	flex-basis: 80%;
 }
+.admin-page .admin-content .pre-table {
+	flex-basis: 80%;
+	padding: 10px 20px;
+	/*outline-offset: 1px #222;*/
+	
+}
+.admin-page .admin-content .pre-table p {
+	padding-left: 5px;
+	border-left: 4px solid #909090;
+}
+.admin-page .admin-content table {
+	border-collapse: collapse;
+	border: 1px solid #222;
+}
+.admin-page .admin-content table th, .admin-page .admin-content table td {
+	/*border-collapse: collapse;*/
+	border: 1px solid #222;
+	padding: 10px;
+}
+.admin-page .admin-content .btn-action {
+	min-width: 70px;
+	min-height: 30px;
+	margin-bottom: 10px;
+}
 .admin-page .admin-sidebar ul {
 	list-style-type: none;
 	padding-left: 0px;
+	margin: 0px;
 }
 .admin-page .admin-sidebar ul li {
 	border: 1px solid #eee;
-	padding: 5px 0px;
+	padding: 15px 0px;
 	text-align: center;
 }
 .admin-page .admin-sidebar ul a {
@@ -250,6 +275,7 @@ footer a.logo-link {
 }
 .admin-posts-page .admin-content table th, .admin-posts-page .admin-content table td {
 	border: 1px solid #eee;
+	padding: 5px;
 }
 
 /*
@@ -348,3 +374,23 @@ footer a.logo-link {
 	border: 1px solid #eee;
 }
 
+/*
+	Login Page
+*/
+
+.login-page {
+	width: 700px;
+	margin: 150px auto;
+}
+
+.login-page h3 {
+	text-align: center;
+}
+
+.login-page .login-btn {
+	height: 50px;
+	width: 100px;
+}
+.login-page .sbmt-btn-container {
+	/*text-align: center;*/
+}

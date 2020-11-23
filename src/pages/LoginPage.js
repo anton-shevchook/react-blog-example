@@ -20,9 +20,22 @@ const LoginPage = () => {
 		});
 	}
 	return ( 
-		<div>
-			<h1>This is Login Page.</h1>
-			<button onClick={login}>Log In</button>
+		<div class="login-page border">
+			<h3>Please login into Blog</h3>
+			<form onSubmit={(e)=>{e.preventDefault();}}>
+				<div class="form-field">
+					<label htmlFor="">Login</label>
+					<input type="text" name="title" placeholder="Enter login" value="" />
+				</div>
+				<div class="form-field">
+					<label htmlFor="">Password</label>
+					<input type="text" name="title" placeholder="Enter password" value="" />
+				</div>
+				<div class="form-field sbmt-btn-container">
+					<button class="login-btn" onClick={login}>Login</button>		
+				</div>
+			</form>
+			
 		</div>
 	);
 }

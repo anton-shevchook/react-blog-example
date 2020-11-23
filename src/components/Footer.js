@@ -8,11 +8,11 @@ import {
   useLocation
 } from 'react-router-dom';
 
-import { standalonePages } from '../utilities/utilities';
+import { adminPages, noTemplatePages } from '../utilities/utilities';
 
 const Footer = () => {
   let location = useLocation();
-	return !standalonePages.includes(location.pathname) ?
+	return !adminPages.includes(location.pathname) && !noTemplatePages.includes(location.pathname) ?
     (
 		  <footer class="border">
           <nav>

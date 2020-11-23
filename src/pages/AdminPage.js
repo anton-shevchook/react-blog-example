@@ -22,17 +22,21 @@ const AdminPage = ({ posts, removePost, editPost, createPost }) => {
 			<div className="admin-sidebar border">
 				<ul>
 					<li>
-						<Link to={`${url}/posts`}>Admin Posts</Link>
+						<Link to={`${url}`}>Main Admin</Link>
+					</li>
+					<li>
+						<Link to={`${url}/posts`}>Posts</Link>
 					</li>
 					<li>
 						<Link to={`${url}/create-post`}>Create Post</Link>
 					</li>
+					
 				</ul>
 			</div>
 
 			<Switch>
 				<Route exact path={path}>
-					<h3>Please select a topic.</h3>
+					<h3>This is main admin page.</h3>
 				</Route>
 				<Route path={`${path}/posts`}>
 					<AdminPostsPage posts={posts} removePost={removePost}  />

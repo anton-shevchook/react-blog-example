@@ -44,9 +44,7 @@ const AdminEditPostPage = (props) => {
 	// Fetch info for this post.
 	return post.id ? (
 		<div class="create-post-page border">
-		{alert(post.id)}
 			<div>
-			    <div>Post Id {id}</div>
 				<CreateEditForm post={post} editPost={editPost} />
 			</div>
 		</div>
