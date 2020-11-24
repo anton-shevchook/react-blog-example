@@ -36,7 +36,18 @@ const AdminPage = ({ posts, removePost, editPost, createPost }) => {
 
 			<Switch>
 				<Route exact path={path}>
-					<h3>This is main admin page.</h3>
+					<div class="admin-content border">
+						<h3 class="">Welcome to Admin Page</h3>
+						<p>
+							Here you would be able to:
+						</p>
+						<ul>
+							<li>View existing posts</li>
+							<li>Create new post</li>
+							<li>Edit post</li>
+							<li>Delete post</li>
+						</ul>
+					</div>
 				</Route>
 				<Route path={`${path}/posts`}>
 					<AdminPostsPage posts={posts} removePost={removePost}  />

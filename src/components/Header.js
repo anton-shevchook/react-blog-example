@@ -43,9 +43,6 @@ const Header = (props) => {
 		                <Link to="/contact">Contact</Link>
 		              </li>
 		              <li>
-		              	<Link to="/admin-posts-page">Admin Posts Page</Link>
-		              </li>
-		              <li>
 		              	<Link to="/post-archive">Post Archive</Link>
 		              </li>
 		              <li>
@@ -53,9 +50,6 @@ const Header = (props) => {
 		              </li>
 		              <li>
 		              	<Link to="/login">Login Page</Link>
-		              </li>
-		              <li>
-		              	<Link to="/single-post">Single Post Page</Link>
 		              </li>
 		            </ul>
 	          	</nav>

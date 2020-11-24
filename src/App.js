@@ -135,7 +135,7 @@ function App() {
             <Route path="/about">
               <AboutPage />
             </Route>
-            <Route path="/single-post">
+            <Route path="/posts/:id">
               <SinglePostPage />
             </Route>
             <Route path="/">
