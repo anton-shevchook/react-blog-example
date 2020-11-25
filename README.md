@@ -1,8 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Project Intro
 
-In the project directory, you can run:
+The idea of project is simple. It's a Blog!
+There are posts(articles) on the blog. You can `create`, `read`, `update`, `delete` posts, (CRUD in short).
+
+Why we chose to go with Blog and Posts?
+Well, because idea could be related to any other application. If you will think that posts are products, you have not a blog, but an online store or any other application. All other actions are the same, `create`, `read`, `update`, `delete`. So this CRUD principle is base of most application on the web.
 
 ### `yarn start`
 
