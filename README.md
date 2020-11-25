@@ -13,13 +13,40 @@ Well, because idea could be related to any other application. If you will think 
 
 So let's start of of something basic. Our Blog can have:
 - 3 simple, static html pages, Home, About, Contact.
-- it will have Header and Footer present on every page.
-- we will have Post Archive page, which will have list view of posts.
-- we will also have Single Post view, that will be showing detailed info of the post.
-- there will be admin page, where user can create, update, delete posts.
-- there will also be login page, where user would be able to login as admin.
+- *Header and Footer* are present on every page.
+- *Post Archive page*, which will have list view of posts.
+- *Single Post view*, that will be showing detailed info of the post.
+- *Admin page*, where user can create, update, delete posts.
+- *Login page*, where user would be able to login as admin.
 
 And that's it.
+
+## Thinking in depth
+
+Let's give more thought about previously mentioned parts of the blog.
+- All the pages should be done in react components.
+- Navigation between pages, Header, Footer should be done using React Router library.
+- As we don't use our database, we will be retrieving posts from fake API and rendering their list in Post Archive page.
+- On the Single Post view we will be retrieving info only about one particular post, also from API.
+- Our CRUD actions will be implemented by creating state, state management functions, filling state with posts fetched from API and propagating them down to components via props.
+- Admin page will have it's own nested navigation, done with React Router.
+- Login page will be using authentication mechanism.
+
+## Chosing our tools
+
+Each feature should be done with additional specific technology, library or function. Based on what we previously mentioned, lets define what we need to use:
+
+- React Router, for page navigation, redirects.
+- Javascript Fetch API, for retrieving data from API.
+- React Hooks and props for state management.
+- Authentication Mechanism for login into system.
+
+## Project Phases
+
+Having all that information, now we can divide our project into development phases. Each phase will be combination of Project Part we are creating and Technology(library) we are using for it.
+
+
+
 
 ### `yarn start`
 
