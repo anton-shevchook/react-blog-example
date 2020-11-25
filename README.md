@@ -45,8 +45,42 @@ Each feature should be done with additional specific technology, library or func
 
 Having all that information, now we can divide our project into development phases. Each phase will be combination of Project Part we are creating and Technology(library) we are using for it.
 
+### Phase #1: Page Components (technologies: React Components, React Router)
 
+- Turning pages into components.
+- Using React Router to navigate.
+- Creating Header and Footer.
 
+### Phase #2: List Post View, Single Post View (technologies: React Router Parameters)
+
+- Creating List Post View and Single Post View
+- Using Router parameters to navigate from List Post View to Single Post View.
+
+### Phase #3: Creating State (technologies: Fetch API React Hooks, props)
+
+- Fetching data into our application
+- Creating  State.
+- Propagating state data through props into lower components.
+- Turning data into HTML elements, rendering data.
+
+### Phase #4: Admin Page and it's subpages (technologies: React Router, Nested Routes, subnavigation)
+
+- Creating Admin page.
+- Creating Posts and Create Post subpages.
+- Rendering posts data in admin table.
+
+### Phase #5: Implementing CRUD operations (technologies: Javascript Array Methods, React Hooks)
+
+- Implementing action delete.
+- Implementing action create.
+- Implementing action edit.
+
+### Phase #7: Creating Login Page (technologies: React Router, Authentication Mechanism)
+
+- Creating Login Page.
+- Using React Router for Protected Routes.
+- Implementing Authentication.
+- Handling Login form.
 
 ### `yarn start`
 
