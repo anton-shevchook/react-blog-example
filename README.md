@@ -6,7 +6,20 @@ The idea of project is simple. It's a Blog!
 There are posts(articles) on the blog. You can `create`, `read`, `update`, `delete` posts, (CRUD in short).
 
 Why we chose to go with Blog and Posts?
-Well, because idea could be related to any other application. If you will think that posts are products, you have not a blog, but an online store or any other application. All other actions are the same, `create`, `read`, `update`, `delete`. So this CRUD principle is base of most application on the web.
+
+Well, because idea could be related to any other application. If you will think that posts are products, you have not a blog, but an online store or any other application. (You can relate your application to this one!!) All other actions are the same, `create`, `read`, `update`, `delete`. So this CRUD principle is base of most application on the web.
+
+## Thinking about our Blog
+
+So let's start of of something basic. Our Blog can have:
+- 3 simple, static html pages, Home, About, Contact.
+- it will have Header and Footer present on every page.
+- we will have Post Archive page, which will have list view of posts.
+- we will also have Single Post view, that will be showing detailed info of the post.
+- there will be admin page, where user can create, update, delete posts.
+- there will also be login page, where user would be able to login as admin.
+
+And that's it.
 
 ### `yarn start`
 
