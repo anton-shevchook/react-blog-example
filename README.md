@@ -45,6 +45,10 @@ Each feature should be done with additional specific technology, library or func
 - React Hooks and props for state management.
 - Authentication Mechanism for login into system.
 
+## Folder structure
+
+![Folder Structure Image](project-description/folder-structure.JPG "Title")
+
 ## Project Phases
 
 Having all that information, now we can divide our project into development phases. Each phase will be combination of Project Part we are creating and Technology(library) we are using for it.
@@ -57,8 +61,56 @@ Having all that information, now we can divide our project into development phas
 
 ### Phase #2: List Post View, Single Post View (technologies: React Router Parameters)
 
-- Creating List Post View and Single Post View
-- Using Router parameters to navigate from List Post View to Single Post View.
+List Item View and Single Item View - it's a concept where you have One page that
+displays list of items(posts or products) with general details and another page displays single item but with more details. You can find it in any web application.
+
+Todo
+- Creating pages List Post View and Single Post View
+![List Item View(in my case it's Archive Page)](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/ArchivePage.js)
+![Single Item View](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/SinglePostPage.js)
+
+- Set up Router parameters to handle id in routes.
+in ![App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
+
+```
+<Route path="/posts/:id">
+    <SinglePostPage />
+</Route>
+```
+
+- Add id to link in List Item View.
+```
+const postItems = posts.map((post, index) => {
+		return (
+			<li key={index} class="post-list-item border">
+				<div class="post-feature-image">
+					<img class="" src={"https://picsum.photos/id/"+ index +"/150"}/>	
+				</div>
+				<div class="post-text">
+```
+	`				<h3><Link to={"/posts/" + post.id}>{post.title}</Link></h3>`
+```
+					<p class="border">
+						{post.body}
+					</p>
+				</div>
+			</li>
+		);
+	});
+```
+- Grab id from url parameters in Single Item View.
+```
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+
+const SinglePostPage = () => {
+	let { id } = useParams();
+```
+
+This phase as whole, you can check more detailed in these files.
+- ![App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
+- ![List Item View(in my case it's Archive Page)](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/ArchivePage.js)
+- ![Single Item View](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/SinglePostPage.js)
 
 ### Phase #3: Creating State (technologies: Fetch API React Hooks, props)
 

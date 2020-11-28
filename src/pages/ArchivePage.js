@@ -8,24 +8,6 @@ import { Link } from 'react-router-dom';
 
 const ArchivePage = ({posts}) => {
 
-	/*
-.post-archive-page {}
-
-.post-archive-page .post-container {}
-
-.post-archive-page .post-container .post-list {}
-
-.post-archive-page .post-container .post-list li {}
-
-.post-archive-page .post-container .post-list li .post-feature-image {}
-
-.post-archive-page .post-container .post-list li .post-text {}
-
-.post-archive-page .pagination-container {}
-
-.post-archive-page .pagination-container .pagination-arrow {}
-	*/
-
 	const postItems = posts.map((post, index) => {
 		return (
 			<li key={index} class="post-list-item border">

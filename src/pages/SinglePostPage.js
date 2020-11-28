@@ -25,7 +25,6 @@ const SinglePostPage = () => {
         console.log('Fetched post', post);
       });
 
-      // setPosts(fakePosts);
     }, []);
 
 

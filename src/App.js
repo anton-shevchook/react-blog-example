@@ -29,25 +29,11 @@ import './App.css';
 
 
 function App() {
-  // fetch('http://localhost:3001/post')
-  //   .then(function(res) {return res.json();})
-  //   .then(function(data) { console.log('data:', data); })
-  //   .catch(function(error) {
-  //     console.log('fail');
-  //   });
-
-    // fetch('http://localhost:3001/posts')
-    // .then(function(res) {return res.json();})
-    // .then(function(data) { console.log('data:', data); })
-    // .catch(function(error) {
-    //   console.log('fail');
-    // });
 
     let fakePosts = [
       {title: 1, body: 2},
       {title: 1, body: 2},
     ]
-    // let posts = []; 
 
     let [posts, setPosts] = useState([]);
 
@@ -57,29 +43,14 @@ function App() {
       fetch(fakeApiUrl)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data)
-        // posts = data;
-        // console.log('posts', posts);
-
         setPosts(data);
       });
 
-      // setPosts(fakePosts);
     }, []);
 
-    // setPosts(fakePosts);
 
     const removePost = (postId) => {
-      /* Part 1
-        Probably here we would need to send Delete request
-        to server.
-        And when it gets back with success, do remove
-        it from UI
-        or....Rerender page, do rerendering here...?!
-
-        We also can add Quick Edit function here that will be updating
-        small fields, or partly updating post.
-      */
+  
       const newPosts = posts.filter((post, index) => {
         return post.id !== postId;
       });
