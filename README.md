@@ -115,10 +115,61 @@ This phase as whole, you can check more detailed in these files.
 
 ### Phase #3: Creating State (technologies: Fetch API React Hooks, props)
 
-- Fetching data into our application
-- Creating  State.
-- Propagating state data through props into lower components.
-- Turning data into HTML elements, rendering data.
+State is place in your front end application where your data is stored. It's like an abstract storage, to where you go and perform different actions. Add, edit, remove things.
+
+What we will do in this phase?
+- Fetch data into our application. In - [App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
+```
+useEffect(() => {
+  const fakeApiUrl = 'https://jsonplaceholder.typicode.com/posts';
+  
+  fetch(fakeApiUrl)
+  .then((res) => res.json())
+  .then((data) => {
+    setPosts(data);
+ });
+```
+- Create State itself.
+```
+let [posts, setPosts] = useState([]);
+```
+- Propagate state data through props into lower components.
+```
+<Route path="/post-archive">
+  <ArchivePage posts={posts} />
+</Route>
+```
+- Turning data into HTML elements, rendering data. In [List Item View(in my case it's Archive Page)](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/ArchivePage.js)
+```
+const ArchivePage = ({posts}) => {
+
+	const postItems = posts.map((post, index) => {
+		return (
+			<li key={index} class="post-list-item border">
+				<div class="post-feature-image">
+					<img class="" src={"https://picsum.photos/id/"+ index +"/150"}/>	
+				</div>
+				<div class="post-text">
+					<h3><Link to={"/posts/" + post.id}>{post.title}</Link></h3>
+					<p class="border">
+						{post.body}
+					</p>
+				</div>
+			</li>
+		);
+	});
+
+	return ( 
+		<main class="post-archive-page container border">
+			<div class="post-container border">
+				<ul class="post-list border">
+					{postItems}
+				</ul>
+			</div>
+```
+This phase as whole, you can check more detailed in these files.
+- [App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
+- [List Item View(in my case it's Archive Page)](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/ArchivePage.js)
 
 ### Phase #4: Admin Page and it's subpages (technologies: React Router, Nested Routes, subnavigation)
 
