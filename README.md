@@ -66,11 +66,11 @@ displays list of items(posts or products) with general details and another page 
 
 Todo
 - Creating pages List Post View and Single Post View
-![List Item View(in my case it's Archive Page)](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/ArchivePage.js)
-![Single Item View](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/SinglePostPage.js)
+[List Item View(in my case it's Archive Page)](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/ArchivePage.js)
+[Single Item View](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/SinglePostPage.js)
 
 - Set up Router parameters to handle id in routes.
-in ![App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
+in [App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
 
 ```
 <Route path="/posts/:id">
@@ -108,9 +108,9 @@ const SinglePostPage = () => {
 ```
 
 This phase as whole, you can check more detailed in these files.
-- ![App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
-- ![List Item View(in my case it's Archive Page)](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/ArchivePage.js)
-- ![Single Item View](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/SinglePostPage.js)
+- [App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
+- [List Item View(in my case it's Archive Page)](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/ArchivePage.js)
+- [Single Item View](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/SinglePostPage.js)
 
 ### Phase #3: Creating State (technologies: Fetch API React Hooks, props)
 
