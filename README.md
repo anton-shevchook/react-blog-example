@@ -295,8 +295,181 @@ const AdminCreatePostPage = (props) => {
 
 ### Phase #7: Creating Login Page (technologies: React Router, Authentication Mechanism)
 
-- Creating Login Page.
-- Using React Router for Protected Routes.
-- Implementing Authentication.
-- Handling Login form.
+- Creating Login Page with login form.
+	- [Login Page](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/LoginPage.js)
+- Creating PrivateRoute component, that will be wrapper for our AdminPage.
+Purpose of the PrivateRoute component is to check whether user is authenticated and based on that, render Admin or redirect to Login screen. Check [PrivateRoute component](https://github.com/anton-shevchook/react-blog-example/blob/master/src/components/PrivateRoute.js)
 
+```
+/*
+	This file defines PrivateRoute component,
+	that is used for Authentication.
+*/
+import React from 'react';
+import {
+	Route,
+	Redirect
+} from 'react-router-dom';
+import auth from '../Authentication';
+
+const PrivateRoute = ({ children, ...rest }) => {
+
+	return ( 
+		<Route
+			{...rest}
+			render={({location}) => 
+				auth.isAuthenticated() ? (children)
+				: (
+					<Redirect
+					 to={{ pathname: '/login', state: { from: location } }}
+					/>
+			)}
+		/>
+	);
+}
+
+export default PrivateRoute;
+```
+
+- Using React Router for Private Routes in [App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
+```
+<PrivateRoute path="/admin">
+  <AdminPage posts={posts} removePost={removePost} editPost={editPost} createPost={createPost} />
+</PrivateRoute>
+```
+
+- Implementing Authentication. We will have class that will be handling user authentication. Check [Authentication.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/Authentication.js) Our Login page will be using it's functions to authenticate user in system.
+```
+// import { useHistory, useLocation } from 'react-router-dom';
+
+class Authentication {
+	constructor() {
+		this.authenticated = false;
+	}
+
+	login(cb, credentials) {
+		const { login, password } = credentials;
+		// let history = useHistory();
+		// let location = useLocation();
+
+
+		alert(window.location);
+
+		if(login === 'admin' && password === 'admin') {
+			alert('Valid');
+			this.authenticated = true;	
+			setTimeout(cb, 100); // fake async
+		} else {
+			alert('Please check your credentials and try again.');
+		}
+		
+		
+	}
+
+	logout(cb) {
+		this.authenticated = false;
+		setTimeout(cb, 100);
+	}
+
+	isAuthenticated() {
+		return this.authenticated;
+	}
+}
+
+export default new Authentication();
+```
+- Handling Login form. We will user our standart ways of handling changes and submit action in our form. Please check full file [CreateEditForm.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/components/CreateEditForm.js) for complete code view.
+```
+/*
+	This File defines Create Edit Form Component.
+*/
+
+import React, { useState, useEffect } from 'react';
+import { useInput } from '../utilities/utilities';
+
+const CreateEditForm = (props) => {
+
+	const { post = { title: '', content: '' }, editPost, createPost } = props;
+
+	console.log('createPost: ', createPost);
+
+
+
+	console.log({post});
+
+
+	const [values, setValues] = useState(post);
+
+	const { id, title, content } = values;
+
+	console.log('comp values', {values});
+
+	const initState = {
+		title: '',
+		content: ''
+	};
+
+
+
+	const handleChange = (e) => {
+		console.log(`${e.target.name}: ${e.target.value}`);
+
+		let { name, value } = e.target;
+
+		setValues({
+			...values,
+			[name]: value
+		});
+
+	}
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		
+		console.log('Sending post:', {post});
+
+		if(id) {
+			alert('Editting post');
+			const post = {
+				id,
+				title,
+				body: content
+			};
+			editPost(id, post);	
+		} else {
+			alert('Creating Post');
+			const post = {
+				title,
+				body: content
+			};
+			createPost(post);
+		}
+		
+
+
+	}
+
+	if (props.id) {
+
+	}
+
+	return (
+		<form action="" onSubmit={handleSubmit}>
+			<div class="form-field">
+				<label htmlFor="">Post Title</label>
+				<input type="text" name="title" placeholder="Enter title" onChange={handleChange} value={values.title} />
+			</div>
+			<div class="form-field">
+				<label htmlFor="">Post Content</label>
+				<textarea name="content" id="" cols="30" rows="20" placeholder="Post Content" onChange={handleChange} value={content}>
+				</textarea>
+			</div>
+			<div class="form-field">
+				<input type="submit" value="Submit" />
+			</div>
+		</form>
+	);
+}
+
+export default CreateEditForm;
+```
