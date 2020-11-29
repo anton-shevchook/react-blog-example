@@ -118,7 +118,7 @@ This phase as whole, you can check more detailed in these files.
 State is place in your front end application where your data is stored. It's like an abstract storage, to where you go and perform different actions. Add, edit, remove things.
 
 What we will do in this phase?
-- Fetch data into our application. In - [App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
+- Fetch data into our application from fake API. In - [App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
 ```
 useEffect(() => {
   const fakeApiUrl = 'https://jsonplaceholder.typicode.com/posts';
@@ -127,6 +127,8 @@ useEffect(() => {
   .then((res) => res.json())
   .then((data) => {
     setPosts(data);
+  });
+
  });
 ```
 - Create State itself.
@@ -173,9 +175,43 @@ This phase as whole, you can check more detailed in these files.
 
 ### Phase #4: Admin Page and it's subpages (technologies: React Router, Nested Routes, subnavigation)
 
-- Creating Admin page.
-- Creating Posts and Create Post subpages.
-- Rendering posts data in admin table.
+- Creating [Admin page](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AdminPage.js) with nested navigation for subpages.
+- Creating [Admin Posts](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AdminPostsPage.js) and [Admin Create Post](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AdminCreatePostPage.js) subpages.
+- Rendering posts data in admin table inside [Admin Posts Page](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AdminPostsPage.js)
+```
+const postsRow = posts.map((post, index) => {
+		return (
+			<tr key={index} id={index}>
+				<td><Link to={`edit-post/${post.id}`}>{post.title}</Link></td>
+				<td>{post.body}</td>
+				<td>Generic date: 20.20.20</td>
+				<td>
+					<button class="btn-action" onClick={() => removePost(post.id)}>Delete</button>
+					<button class="btn-action" onClick={() => history.push(`edit-post/${post.id}`)}>Edit</button>	
+				</td>
+			</tr>
+		);
+	});
+```
+```
+<table>
+	<thead>
+		<tr>
+			<th>Post Title</th>
+			<th>Excerpt</th>
+			<th>Date Created</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		{postsRow}
+	</tbody>
+</table>
+```
+You can see full phase implemented in these files:
+- [Admin Page](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AdminPage.js)
+- [Admin Posts Page](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AdminPostsPage.js)
+- [Admin Create Post Page](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AdminCreatePostPage.js)
 
 ### Phase #5: Implementing CRUD operations (technologies: Javascript Array Methods, React Hooks)
 
