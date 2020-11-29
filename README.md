@@ -175,6 +175,9 @@ This phase as whole, you can check more detailed in these files.
 
 ### Phase #4: Admin Page and it's subpages (technologies: React Router, Nested Routes, subnavigation)
 
+In this phase we will be adding Admin Page in our website, also implementing nested routing or subnavigation in another words.
+
+Things we need to do:
 - Creating [Admin page](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AdminPage.js) with nested navigation for subpages.
 - Creating [Admin Posts](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AdminPostsPage.js) and [Admin Create Post](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AdminCreatePostPage.js) subpages.
 - Rendering posts data in admin table inside [Admin Posts Page](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AdminPostsPage.js)
@@ -215,9 +218,80 @@ You can see full phase implemented in these files:
 
 ### Phase #5: Implementing CRUD operations (technologies: Javascript Array Methods, React Hooks)
 
-- Implementing action delete.
-- Implementing action create.
-- Implementing action edit.
+CRUD is web development principle that stands for actions that we perform with data in our application. We Create, Read, Update, Delete our posts, products, users or anything else that is in our application.
+
+Things we need to do:
+- Implementing action delete, create, edit as functions in App.js
+```
+  const removePost = (postId) => {
+  
+      const newPosts = posts.filter((post, index) => {
+        return post.id !== postId;
+      });
+
+      setPosts(newPosts, []);
+    }
+```
+
+```
+const createPost = (newPost) => {
+  posts.push(newPost);
+  setPosts(posts, []);
+}
+```
+
+```
+ const editPost = (postId, alteredPost) => {
+	  const newPosts = posts.map((post, index) => {
+	    if(post.id == postId){
+	      return alteredPost;
+	    }
+	    return post;
+	  });
+
+	  setPosts(newPosts, []);
+}
+```
+- Propagating those functions in props to child components where we actually will be using them.
+In our AdminPostsPage and AdminCreatePost.
+```
+const AdminPostsPage = ({posts, removePost}) => {
+	const { path, url } = useRouteMatch();
+	let location = useLocation();
+
+	const history = useHistory();
+
+	const postsRow = posts.map((post, index) => {
+		return (
+			<tr key={index} id={index}>
+				<td><Link to={`edit-post/${post.id}`}>{post.title}</Link></td>
+				<td>{post.body}</td>
+				<td>Generic date: 20.20.20</td>
+				<td>
+					<button class="btn-action" onClick={() => removePost(post.id)}>Delete</button>
+					<button class="btn-action" onClick={() => history.push(`edit-post/${post.id}`)}>Edit</button>	
+				</td>
+			</tr>
+		);
+	});
+```
+
+```
+const AdminCreatePostPage = (props) => {
+	const { createPost } = props;
+	console.log('AdminCreatePostPage createPost:', createPost);
+	return (
+		<div class="create-post-page border">
+			<div>
+				<CreateEditForm createPost={createPost} />
+			</div>
+		</div>
+	);
+}
+```
+
+- And finaly we are using createPost() function in a Form, where we create new Post.
+[CreateEditForm.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/components/CreateEditForm.js)
 
 ### Phase #7: Creating Login Page (technologies: React Router, Authentication Mechanism)
 
