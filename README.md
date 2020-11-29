@@ -49,6 +49,29 @@ Each feature should be done with additional specific technology, library or func
 
 ![Folder Structure Image](project-description/folder-structure.JPG "Title")
 
+### Adding CSS
+
+In this projects we created one general css file for whole application [general.css](https://github.com/anton-shevchook/react-blog-example/blob/master/src/css/general.css)
+And then just added reference to it in our index.js file.
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import './css/general.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+https://github.com/anton-shevchook/react-blog-example/blob/master/src/index.js
+
 ## Project Phases
 
 Having all that information, now we can divide our project into development phases. Each phase will be combination of Project Part we are creating and Technology(library) we are using for it.
