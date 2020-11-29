@@ -7,38 +7,6 @@ import { useInput } from '../utilities/utilities';
 
 const CreateEditForm = (props) => {
 
-	// lets do create form first
-	// not sure what to do with image in React, research, do it for later.
-	// how are we working with state?
-	/*
-		we have title, content, id(if it's edit form)
-		it's create for now
-		we need to make handle change
-		make state change
-
-		we copied handleChange
-		now, we should make submit.
-
-		and then try writing for handling edit form?
-	*/
-
-	// const [title, setTitle] = useState("");
-
-	// const { value: title, setValue: setTitle } = useInput(''); 
-
-	// if(props.post) {
-	// 	const { post } = props;
-	// 	const postTitle = post.title;
-	// 	const postContent = post.body;
-	// 	// const [values, setValues] = useState({title: postTitle, content: postContent});		
-	// } else {
-
-	// }
-
-
-
-	// const { post } = props || { post: { title: '', content: '' } };
-
 	const { post = { title: '', content: '' }, editPost, createPost } = props;
 
 	console.log('createPost: ', createPost);
@@ -47,14 +15,6 @@ const CreateEditForm = (props) => {
 
 	console.log({post});
 
-	// let postTitle = '';
-	// let postContent = ''; 
-
-	// if(post){
-	// 	postTitle = post.title;
-	// 	postContent = post.content;	
-	// }
-	
 
 	const [values, setValues] = useState(post);
 
@@ -67,21 +27,6 @@ const CreateEditForm = (props) => {
 		content: ''
 	};
 
-	// useEffect(() => {
-	// 	console.log('post', {post});
-
-	// 	if(props.post){
-	// 		alert('useEffect, setValues', post.title, post.content);
-	// 	setValues({
-	// 		title: post.title,
-	// 		content: post.content
-	// 	});
-	// }
-
-
-
-	// }, []);
-
 
 
 	const handleChange = (e) => {
@@ -89,22 +34,10 @@ const CreateEditForm = (props) => {
 
 		let { name, value } = e.target;
 
-		// if(name == 'title') {
-		// 	setTitle(value);
-		// }
-
-		// it probably happens later, after following console.logs
 		setValues({
 			...values,
-			// title: '', content: ''
 			[name]: value
-			// title: value
 		});
-
-
-		// console.log(`title: ${title}`);
-		// console.log(`content: ${content}`);
-
 
 	}
 

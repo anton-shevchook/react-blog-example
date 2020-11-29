@@ -17,17 +17,10 @@ import { adminPages, noTemplatePages } from '../utilities/utilities';
 const Header = (props) => {
 	let { path, url } = useRouteMatch();
 	let location = useLocation(); 
-	// alert(path);
-	// alert(url);
-	// alert(props.location);
-	// alert(window.location.pathname);
-	// alert(path);
-	// alert(url);
-	// alert(location.pathname);
+
 	const noHeaderPages = ['/admin', '/admin/posts', '/admin/create-post', '/login'];
 
 	return !adminPages.includes(location.pathname) ?
-	// (location.pathname !== '/admin' && location.pathname !== '/login' ) ? 
 		(
 			<header>
 				<div className="logo"><a href="/" className="logo-link">Home</a></div>

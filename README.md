@@ -56,8 +56,14 @@ Having all that information, now we can divide our project into development phas
 ### Phase #1: Page Components (technologies: React Components, React Router)
 
 - Turning pages into components.
-- Using React Router to navigate.
+	- [Home Page](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/MainPage.js)
+	- [About Page](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/AboutPage.js)
+	- [Contact Page](https://github.com/anton-shevchook/react-blog-example/blob/master/src/pages/ContactPage.js)
+- Using React Router in App.js to navigate between pages.
+	- [App.js](https://github.com/anton-shevchook/react-blog-example/blob/master/src/App.js)
 - Creating Header and Footer.
+	- [Header](https://github.com/anton-shevchook/react-blog-example/blob/master/src/components/Header.js)
+	- [Footer](https://github.com/anton-shevchook/react-blog-example/blob/master/src/components/Footer.js)
 
 ### Phase #2: List Post View, Single Post View (technologies: React Router Parameters)
 

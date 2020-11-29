@@ -15,10 +15,6 @@ import {
 const AdminPostsPage = ({posts, removePost}) => {
 	const { path, url } = useRouteMatch();
 	let location = useLocation();
-	console.log(url);
-	console.log({location});
-	console.log('Posts in Admin Page', posts);
-
 
 	const history = useHistory();
 
