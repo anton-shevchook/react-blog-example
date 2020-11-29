@@ -158,7 +158,7 @@ useEffect(() => {
     setPosts(data);
   });
 
- });
+}, []);
 ```
 - Create State itself.
 ```
